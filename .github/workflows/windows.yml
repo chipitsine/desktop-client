@@ -1,0 +1,17 @@
+
+name: Windows
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  Build:
+    name: Basic
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build on windows
+      run: |
+          deploy\build_windows.bat
