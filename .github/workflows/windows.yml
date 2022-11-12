@@ -19,4 +19,5 @@ jobs:
 
     - name: Build on windows
       run: |
+          set PATH=%SYSTEMROOT%\System32\WindowsPowerShell\v1.0:%PATH%
           deploy\build_windows.bat
