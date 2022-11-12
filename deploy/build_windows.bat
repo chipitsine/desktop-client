@@ -45,7 +45,7 @@ echo "TARGET_FILENAME:              %TARGET_FILENAME%"
 
 rem Signing staff
 
-%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass Import-PfxCertificate -FilePath %SCRIPT_DIR:"=%\PrivacyTechWindowsCert.pfx -CertStoreLocation Cert:\LocalMachine\My -Password $(ConvertTo-SecureString -String $Env:WIN_CERT_PW -AsPlainText -Force)
+CERTUTIL -f -p %WIN_CERT_PW% -importpfx %SCRIPT_DIR:"=%\PrivacyTechWindowsCert.pfx
 
 echo "Cleanup..."
 Rmdir /Q /S %RELEASE_DIR%
