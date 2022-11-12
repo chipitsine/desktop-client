@@ -15,9 +15,12 @@ jobs:
 
     - name: Install requirements
       run: |
-          choco install make
+          choco install make 
+          choco install qt5-default
 
     - name: Build on windows
       run: |
+          echo %SYSTEMROOT%\System32\WindowsPowerShell\v1.0
+          dir %SYSTEMROOT%\System32\WindowsPowerShell\v1.0
           set PATH=%SYSTEMROOT%\System32\WindowsPowerShell\v1.0:%PATH%
           deploy\build_windows.bat
