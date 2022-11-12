@@ -12,6 +12,11 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
+
+    - name: Install requirements
+      run: |
+          choco install make
+
     - name: Build on windows
       run: |
           deploy\build_windows.bat
